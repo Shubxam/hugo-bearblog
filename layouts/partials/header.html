@@ -1,4 +1,12 @@
 <a href="{{ "" | relURL }}" class="title">
-  <h2>{{ .Site.Title }}</h2>
+  <h1>{{ .Site.Title }}</h1>
 </a>
-<nav>{{- partial "nav.html" . -}}</nav>
+<nav>
+  {{ range .Site.Menus.main }}
+  <a href="{{ .URL }}">{{ .Name }}</a>
+  {{ end }}
+  | find me on: 
+  <a href="https://github.com/shubxam">github</a>
+  <a href="https://linkedin.com/in/shubhamsoni">linkedin</a>
+  <a href="https://mastodon.social/@shubxam">mastodon</a>
+</nav>
